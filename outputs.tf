@@ -17,3 +17,13 @@ output "eventbridge_rule_name" {
   description = "Name of the IAM security monitoring EventBridge rule"
   value       = aws_cloudwatch_event_rule.iam_security_events.name
 }
+
+output "cloudtrail_name" {
+  description = "Name of the security monitoring CloudTrail"
+  value       = aws_cloudtrail.security_monitoring.name
+}
+
+output "cloudtrail_s3_bucket" {
+  description = "S3 bucket storing CloudTrail logs"
+  value       = aws_s3_bucket.cloudtrail_logs.bucket
+}

@@ -22,4 +22,15 @@ variable "notification_email" {
   type        = string
 }
 
+variable "remediation_test_username" {
+  description = "Dedicated IAM test user for controlled remediation"
+  type        = string
+  default     = "week35-remediation-test-user"
+}
+
+variable "remediation_dry_run" {
+  description = "When true, remediation is simulated without changing IAM"
+  type        = bool
+  default     = true
+}
 

@@ -1,0 +1,21 @@
+
+{
+  "version": "0",
+  "id": "week35-test-001",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.iam",
+  "account": "123456789012",
+  "time": "2026-10-31T19:15:00Z",
+  "region": "us-east-1",
+  "detail": {
+    "eventSource": "iam.amazonaws.com",
+    "eventName": "CreateUser",
+    "userIdentity": {
+      "type": "IAMUser",
+      "userName": "week35-test-user"
+    },
+    "requestParameters": {
+      "userName": "week35-test-user"
+    }
+  }
+}
