@@ -21,9 +21,6 @@ The remediation workflow is designed with safety controls and currently operates
 
 ## Architecture
 
-<img width="1359" height="755" alt="Screenshot 2026-11-07 at 4 37 04 PM" src="https://github.com/user-attachments/assets/b4623a16-63c4-4748-8b5e-251aa13df6e4" />
-
-
 CloudTrail records IAM API activity, EventBridge filters selected events, and Step Functions coordinates the incident response process. The remediation decision is made by the `CheckRemediation` choice state after the initial alert is sent.
 
 ```mermaid
