@@ -21,6 +21,9 @@ The remediation workflow is designed with safety controls and currently operates
 
 ## Architecture
 
+<img width="1359" height="755" alt="Screenshot 2026-11-07 at 4 37 04 PM" src="https://github.com/user-attachments/assets/b4623a16-63c4-4748-8b5e-251aa13df6e4" />
+
+
 CloudTrail records IAM API activity, EventBridge filters selected events, and Step Functions coordinates the incident response process. The remediation decision is made by the `CheckRemediation` choice state after the initial alert is sent.
 
 ```mermaid
@@ -521,37 +524,42 @@ The detector stores the initial incident details as a JSON snapshot. Step Functi
 
 Sensitive values such as account IDs, email addresses, and unsubscribe links are redacted.
 
-### EventBridge rule and monitored IAM events
+### EventBridge rule
 
-***
+<img width="2880" height="1800" alt="EventBridge — Detection rule" src="https://github.com/user-attachments/assets/e70150b6-8186-4cb7-9bd8-b096f7dc02d4" />
 
-### Step Functions state machine
 
-***
+### Step Functions Complete Workflow
 
-### DynamoDB incident record
+<img width="2880" height="1800" alt="Step Functions — Complete workflow" src="https://github.com/user-attachments/assets/ee9585d3-f52b-4b72-a0fa-62cc23c9912f" />
 
-***
 
-### Initial SNS alert
+### DynamoDB incident records
 
-***
+<img width="2880" height="1800" alt="DynamoDB — Incident records" src="https://github.com/user-attachments/assets/288b77bf-e1e5-4436-b469-5f38f6e1c622" />
+
+### SNS Incident alert
+
+<img width="2880" height="1800" alt="SNS — Incident notification" src="https://github.com/user-attachments/assets/a9f77a84-b963-4d48-ba23-23bd8c3809d7" />
+
 
 ### Remediation execution history
 
-***
+<img width="2880" height="1800" alt="Successful remediation execution" src="https://github.com/user-attachments/assets/e236e5f3-f91e-4713-9cfa-b892b7f0f9ef" />
 
-### Dry-run execution output
+### IAM Remediation permissions
 
-***
+<img width="2880" height="1800" alt="IAM — Remediation permissions" src="https://github.com/user-attachments/assets/b6c6613c-77e2-4344-bc2d-f1b4fcc3cf19" />
+
 
 ### Access key still active after dry-run
 
-***
+<img width="2880" height="1800" alt="IAM — Access key remains active" src="https://github.com/user-attachments/assets/2e85934a-5d44-44ac-af4c-b0f8ba54fb00" />
 
-### Remediation result email
+### AWS Lambda — Least-Privilege Security Architecture
 
-***
+<img width="2880" height="1800" alt="AWS Lambda — Least-Privilege Security Architecture" src="https://github.com/user-attachments/assets/3d862236-6b0c-44b7-ac66-bc2bb8637566" />
+
 
 ## Security Considerations
 
